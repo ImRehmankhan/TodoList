@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
 
-<body>
-    <div id="root">    
-      <div class="style">    
-         <input id="inputbox" class="inputstyle" type="text" placeholder="Enter Todos Here">
-         <button id="btn" onclick="Addtodos()" class="btn">+</button>
-     </div>
-     <div  id="todos" class="displaydiv">    
-       
-     </div>
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div id="root" class="container flex">
+      <div class="row">
+        <div class="inputdiv col-lg-12 flex col-sm-12">
+          <input id="inputbox" class="inputbox"type="text" placeholder="Enter Todos Here"/>
+          <button id="btn" class="btn btn-success" onclick="Addtodos()" class="btn">Add...</button>
+        </div>
+        <div id="todos" class="displaydiv flex col-lg-12 col-sm-12 ">
+
+        </div>
+      </div>
     </div>
     <script src="./java.js"></script>
-</body>
+  </body>
 </html>

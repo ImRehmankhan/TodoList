@@ -30,10 +30,10 @@ const displaytodos=()=>{
         (e,index)=>{
             
            list+=`
-           <div class="paradiv">
+           <div class="todosdiv">
               <p>${index+1}:${e} </p>
-              <button onclick="Edit(${index})" class="btn btn-edit">Edit</button>
-              <button onclick="Delete(${index})" class="btn btn-delete">Delete</button> 
+              <button onclick="Edit(${index})" class="btn btn-success">Edit...</button>
+              <button onclick="Delete(${index})" class="btn btn-danger">Delete</button> 
             </div>`;
         }
     )
