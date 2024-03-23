@@ -2,10 +2,8 @@ var maindiv = document.getElementById("inputbox");
 var div2 = document.getElementById("todos");
 let temdata=localStorage.getItem("todos")
 let datas=(!!temdata?JSON.parse(temdata):[])
-
-console.log(maindiv.value)
-
 let todos=[]
+let editindex;
 
 
 function Addtodos(){
@@ -13,6 +11,10 @@ let checkval=document.querySelector('input').value
 if(checkval=="")
 {
     alert("Please Enter Some Text")
+}
+else if(btn.innerText=='Update'){
+ todos[editindex]=checkval
+ displaytodos()
 }
 else{
     todos.push(checkval)
@@ -30,8 +32,8 @@ const displaytodos=()=>{
         (e,index)=>{
             
            list+=`
-           <div class="todosdiv">
-              <p>${index+1}:${e} </p>
+           <div class="todosdiv ">
+              <span>${index+1}:${e} </span>
               <button onclick="Edit(${index})" class="btn btn-success">Edit...</button>
               <button onclick="Delete(${index})" class="btn btn-danger">Delete</button> 
             </div>`;
@@ -41,8 +43,11 @@ const displaytodos=()=>{
 
 }
 displaytodos()
+let btn=document.getElementById('btn')
 
 const Edit=(index)=>{
+    editindex=index;
+    btn.innerText='Update'
     document.querySelector('input').value=todos[index]
     displaytodos()
 }
