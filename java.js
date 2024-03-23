@@ -1,6 +1,7 @@
 var maindiv = document.getElementById("inputbox");
 var div2 = document.getElementById("todos");
 let temdata=localStorage.getItem("todos")
+let btn=document.getElementById('btn')
 let datas=(!!temdata?JSON.parse(temdata):[])
 let todos=[]
 let editindex;
@@ -14,6 +15,7 @@ if(checkval=="")
 }
 else if(btn.innerText=='Update'){
  todos[editindex]=checkval
+ btn.innerText='Add...'
  displaytodos()
 }
 else{
@@ -43,8 +45,6 @@ const displaytodos=()=>{
 
 }
 displaytodos()
-let btn=document.getElementById('btn')
-
 const Edit=(index)=>{
     editindex=index;
     btn.innerText='Update'
